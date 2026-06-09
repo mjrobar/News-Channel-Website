@@ -564,8 +564,8 @@
 .ticker-wrap {
     background-color: #132139 !important; /* Changed to match navigation bar color */
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
+    display: block !important; /* Changed from flex to block to isolate absolute children layout */
+    position: relative !important; /* Enable relative containment */
     height: 40px; /* Reduced height to 40px as requested */
     padding: 0 !important; /* Removed vertical padding to allow full-height red box */
     overflow: hidden;
@@ -587,19 +587,12 @@
     height: 100% !important; /* Stretches dynamically to match ticker bar height */
     width: 130px !important; /* Fixed width so it never increases */
     min-width: 130px !important;
-    position: relative !important;
+    position: absolute !important; /* Changed from relative to absolute to isolate layout from track */
+    left: 0 !important;
+    top: 0 !important;
     overflow: hidden !important;
-    flex-shrink: 0;
     box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15);
     padding: 0 !important;
-}
-
-/* Static width for red box on desktop */
-@media (min-width: 769px) {
-    .ticker-heading {
-        width: 130px !important;
-        min-width: 130px !important;
-    }
 }
 
 /* Date and time font-size increased by 2 steps to 1.5rem to match heading */
@@ -655,7 +648,8 @@
 }
 .ticker-news-track {
     overflow: hidden;
-    flex-grow: 1;
+    margin-left: 130px; /* Offset absolute heading */
+    width: calc(100% - 130px); /* Take up remaining width */
     height: 100%;
     contain: layout paint;
 }

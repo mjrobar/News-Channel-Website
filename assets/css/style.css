@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Tiro+Bangla:ital@0;1&display=swap');
+@import url('https://fonts.cdnfonts.com/css/solaimanlipi');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
+@font-face {
+    font-family: 'Prothoma';
+    src: url('../fonts/Prothom-Alo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    /* Brand Colors - OKLCH */
+    --primary: oklch(25% 0.05 260); /* Deep Navy, slightly tinted */
+    --primary-light: oklch(35% 0.06 260);
+    --accent: oklch(78% 0.16 70); /* Professional Gold */
+    --accent-hover: oklch(70% 0.18 65);
+    
+    /* Neutrals - Tinted towards brand blue */
+    --bg-main: oklch(100% 0 0);
+    --bg-surface: oklch(97% 0.01 260);
+    --bg-white: oklch(100% 0 0);
+    --text-main: oklch(20% 0.02 260);
+    --text-muted: oklch(50% 0.02 260);
+    --border: oklch(90% 0.01 260);
+    
+    /* Semantic */
+    --danger: oklch(60% 0.22 25);
+    
+    /* Typography */
+    --font-heading: 'SolaimanLipi', 'Tiro Bangla', serif;
+    --font-body: 'SolaimanLipi', 'Hind Siliguri', sans-serif;
+    --font-mono: 'Inter', system-ui, sans-serif; /* For numbers/data */
+    
+    /* Spacing System - Rhythm */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    
+    /* Motion - Exponential Easing */
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: 200ms var(--ease-out-expo);
+    --transition-normal: 400ms var(--ease-out-expo);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--primary);
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-fast);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    max-width: 1370px; /* Slightly wider for professional editorial feel, decreased to 1370px to reduce 50px total on both sides from original 1470px */
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+/* Utilities */
+.text-accent { color: var(--accent); }
+.text-danger { color: var(--danger); }
+.bg-primary { background-color: var(--primary); }
+.mt-4 { margin-top: var(--space-md); }
+.mb-4 { margin-bottom: var(--space-md); }
+
+/* Layout Utilities */
+.d-flex { display: flex !important; }
+.flex-row { flex-direction: row !important; }
+.flex-column { flex-direction: column !important; }
+.flex-grow-1 { flex-grow: 1 !important; }
+.flex-shrink-1 { flex-shrink: 1 !important; }
+.ms-2 { margin-left: var(--space-xs) !important; }
+.mt-2 { margin-top: var(--space-xs) !important; }
+.mb-3 { margin-bottom: var(--space-sm) !important; }
+.pb-2 { padding-bottom: var(--space-xs) !important; }
+.pb-3 { padding-bottom: var(--space-sm) !important; }
+.m-0 { margin: 0 !important; }
+.fw-bold { font-weight: 700 !important; }
+.lh-base { line-height: 1.6 !important; }
+.rounded { border-radius: 8px !important; }
+.border-bottom { border-bottom: 1px solid var(--border) !important; }
+.text-muted { color: var(--text-muted) !important; }
+.position-relative { position: relative !important; }
+
+/* Ekattor News Card Style */
+.ekattor-news-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    width: 100%;
+}
+
+.ekattor-news-card .image-wrapper {
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    overflow: hidden;
+}
+
+.ekattor-news-card .image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ekattor-news-card .info-wrapper {
+    padding: 16px 0;
+}
+
+.ekattor-news-card .title {
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+}
+
+.ekattor-news-card .title a {
+    font-size: 26px;
+    font-weight: 700;
+    color: #111827;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.ekattor-news-card .title a:hover {
+    color: #cc0000;
+}
+
+.ekattor-news-card .summary {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #4B5563;
+}

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>অর্থনীতি - Channel One News</title>
+    <!-- Bootstrap Grid, Utilities & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap-utilities.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css?v=1.38.0">
+    <link rel="stylesheet" href="assets/css/components.css?v=1.38.0">
+    <link rel="stylesheet" href="assets/css/home.css?v=1.38.0">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-inner">
+            <!-- Left Section: Logo & Navigation -->
+            <div class="navbar-left">
+                <div class="logo">
+                    <div class="logo-box">
+                        <img src="assets/images/logo.jpg" alt="Channel One News Logo" class="logo-img">
+                    </div>
+                    <span class="logo-text">Channel One News</span>
+                </div>
+                <ul class="nav-links">
+                    <li class="nav-item">
+                        <a href="index.html">
+                            <i class="fas fa-home"></i>
+                            <span>বর্তমান খবর</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="economy.html">
+                            <i class="fas fa-chart-line"></i>
+                            <span>অর্থনীতি</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fas fa-running"></i>
+                            <span>খেলাধুলা</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fas fa-globe"></i>
+                            <span>আন্তর্জাতিক</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fas fa-flag"></i>
+                            <span>জাতীয়</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fas fa-landmark"></i>
+                            <span>রাজনীতি</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fas fa-briefcase"></i>
+                            <span>শেয়ারবাজার</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="dropdown-trigger">
+                            <span>আরো</span>
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-heartbeat"></i>
+                                    <span>স্বাস্থ্য</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>অপরাধ</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-gavel"></i>
+                                    <span>আদালত</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right Section: Watch Live & Social Icons -->
+            <div class="navbar-right">
+                <a href="https://www.youtube.com/watch?v=gPeWMOof-IM" target="_blank" rel="noopener noreferrer" class="watch-live-btn">
+                    <i class="fas fa-video"></i>
+                    <span>Live</span>
+                </a>
+                <div class="nav-divider"></div>
+                <div class="nav-social-links">
+                    <a href="https://www.facebook.com/channelonenewsdhaka/" target="_blank" rel="noopener noreferrer" class="nav-social-icon facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/@ChannelOneNewsBD" target="_blank" rel="noopener noreferrer" class="nav-social-icon youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://x.com/onenewsbd" target="_blank" rel="noopener noreferrer" class="nav-social-icon twitter" title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/channelonenewsbd/" target="_blank" rel="noopener noreferrer" class="nav-social-icon instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breaking News Ticker -->
+    <div class="container">
+        <div class="ticker-wrap">
+            <div class="ticker-heading">
+                <div class="ticker-heading-content active" id="ticker-heading-headline">
+                    <i class="fas fa-bullhorn" style="margin-right: 8px;"></i>
+                    <span>শিরোনাম</span>
+                </div>
+                <div class="ticker-heading-content slide-below" id="ticker-heading-date">
+                    <span id="ticker-date-text">০১ জুন ২০২৬</span>
+                </div>
+                <div class="ticker-heading-content slide-below" id="ticker-heading-time">
+                    <span id="ticker-time-text">AM 10:16:43</span>
+                </div>
+            </div>
+            <div style="overflow: hidden; flex-grow: 1; height: 100%;">
+                <div class="ticker-news">
+                    <span class="ticker-category-tag">বাণিজ্য ও অর্থনীতি</span>
+                    <a href="#" class="ticker-item">চালু হচ্ছে 'ই-ঋণ' সেবা, লাগবে না ব্যাংক; ঘরে বসেই</a>
+                    <span>●</span>
+                    <a href="#" class="ticker-item">চলতি অর্থবছর শেষে প্রবাসী আয়ে নতুন রেকর্ড গড়ার ইঙ্গিত</a>
+                    <span>●</span>
+                    <span class="ticker-category-tag">জাতীয়</span>
+                    <a href="#" class="ticker-item">২০২৭ সালের এসএসসি পরীক্ষা শুরু ৭ জানুয়ারি, এইচএসসি ৬ জুন</a>
+                    <span>●</span>
+                    <a href="#" class="ticker-item">বাংলাদেশ রেলওয়েতে যুক্ত হচ্ছে নতুন ৪০টি ব্রডগেজ ইঞ্জিন</a>
+                    <span>●</span>
+                    <a href="#" class="ticker-item">সারা দেশে ডেঙ্গু প্রতিরোধে দেশব্যাপী সচেতনতা অভিযান শুরু</a>
+                    <span>●</span>
+                    <span class="ticker-category-tag">খেলাধুলা</span>
+                    <a href="#" class="ticker-item">জাকার নেতৃত্বে সুইজারল্যান্ডের বিশ্বকাপ দলে ডাক পেলেন যারা</a>
+                    <span>●</span>
+                    <a href="#" class="ticker-item">আপিল খারিজ, আইপিএলের প্লে-অফে খেলতে পারবেন না মোস্তাফিজ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Category Header -->
+        <div class="category-page-header">
+            <div class="breadcrumb-nav">
+                <a href="index.html"><i class="fas fa-home"></i> হোম</a>
+                <span class="sep">/</span>
+                <span class="current">বাণিজ্য ও অর্থনীতি</span>
+            </div>
+            <h1 class="category-page-title">অর্থনীতি</h1>
+        </div>
+
+        <!-- Economy Section Hero (matching homepage) -->
+        <div class="economy-layout" style="margin-top: 0;">
+            <!-- Left: Large Featured Article -->
+            <div class="economy-featured">
+                <article class="economy-featured-card"
+                         data-headline="বাংলাদেশ থেকে ৬ হাজার ট্যাক্সিচালক নেবে দুবাই"
+                         data-image="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=800"
+                         data-category="বাণিজ্য ও অর্থনীতি"
+                         data-publisher="নিজস্ব প্রতিবেদক"
+                         data-publish-date="১১:১৪, মঙ্গলবার, ০২ জুন, ২০২৬"
+                         data-update-date="১১:১৮, মঙ্গলবার, ০২ জুন, ২০২৬"
+                         data-tags="দুবাই, ট্যাক্সিচালক, কর্মসংস্থান, রেমিট্যান্স">
+                    <a href="#" class="economy-featured-img-link">
+                        <div class="img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=800" alt="বাংলাদেশ থেকে ৬ হাজার ট্যাক্সিচালক নেবে দুবাই">
+                        </div>
+                    </a>
+                    <div class="economy-featured-content">
+                        <h3 class="economy-featured-title">
+                            <a href="#">বাংলাদেশ থেকে ৬ হাজার ট্যাক্সিচালক নেবে দুবাই</a>
+                        </h3>
+                        <p class="economy-featured-excerpt">
+                            দুবাই ট্যাক্সি কোম্পানিতে বাংলাদেশিদের সাফল্য দেখে নতুন করে আরও ৬ হাজার নিতে চায় দুবাই। এ নিয়ে প্রবাসী কল্যাণ ও বৈদেশিক কর্মসংস্থান মন্ত্রী আরিফুল হক চৌধুরীর সাথে সৌজন্য সাক্ষাৎ করেছেন দুবাই ট্যাক্সি কোম্পানির একটি প্রতিনিধি দল। রোববার (১৭ মে)...
+                        </p>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Right: 2x2 Grid of Smaller Articles -->
+            <div class="economy-grid">
+                <!-- Small Card 1 -->
+                <article class="economy-small-card"
+                         data-headline="স্বর্ণের দাম আরও কমলো"
+                         data-image="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=500"
+                         data-category="বাণিজ্য ও অর্থনীতি"
+                         data-publisher="অনলাইন ডেস্ক"
+                         data-publish-date="১০:৩০, মঙ্গলবার, ০২ জুন, ২০২৬"
+                         data-update-date="১০:৪৫, মঙ্গলবার, ০২ জুন, ২০২৬"
+                         data-tags="স্বর্ণ, জুয়েলারী, মূল্য হ্রাস, বাজার">
+                    <a href="#" class="economy-small-img-link">
+                        <div class="img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=500" alt="স্বর্ণের দাম আরও কমলো">
+                        </div>
+                    </a>
+                    <div class="economy-small-content">
+                        <h4 class="economy-small-title">
+                            <a href="#">স্বর্ণের দাম আরও কমলো</a>
+                        </h4>
+                        <p class="economy-small-excerpt">
+                            স্থানীয় বাজারে তেজাবী সোনার দাম কমার প্রেক্ষিতে দেশের বাজারে সব ধরনের স্বর্ণের দাম কমানোর সিদ্ধান্ত নিয়েছে জুয়েলার্স অ্যাসোসিয়েশন...
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Small Card 2 -->
+                <article class="economy-small-card"
+                         data-headline="বৈদেশিক মুদ্রার রিজার্ভ ৩৪ বিলিয়ন ডলার ছাড়ালো"
+                         data-image="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80&w=500"
+                         data-category="বাণিজ্য ও অর্থনীতি"
+                         data-publisher="নিজস্ব প্রতিবেদক"
+                         data-publish-date="০৯:১৫, মঙ্গলবার, ০২ জুন, ২০২৬"
+                         data-update-date="০৯:৪৫, মঙ্গলবার, ০২ জুন, ২০২৬"
+                         data-tags="রিজার্ভ, বৈদেশিক মুদ্রা, বাংলাদেশ ব্যাংক, অর্থনীতি">
+                    <a href="#" class="economy-small-img-link">
+                        <div class="img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80&w=500" alt="বৈদেশিক মুদ্রার রিজার্ভ ৩৪ বিলিয়ন ডলার ছাড়ালো">
+                        </div>
+                    </a>
+                    <div class="economy-small-content">
+                        <h4 class="economy-small-title">
+                            <a href="#">বৈদেশিক মুদ্রার রিজার্ভ ৩৪ বিলিয়ন ডলার ছাড়ালো</a>
+                        </h4>
+                        <p class="economy-small-excerpt">
+                            প্রবাসী আয় বা রেমিট্যান্সের ব্যাপক প্রবাহ এবং রপ্তানি আয় বৃদ্ধির হাত ধরে দেশের বৈদেশিক মুদ্রার রিজার্ভ নতুন মাইলফলক স্পর্শ করেছে...
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Small Card 3 -->
+                <article class="economy-small-card"
+                         data-headline="ভিসা বন্ডের অর্থ বিদেশে পাঠানো যাবে ব্যাংকের মাধ্যমে"
+                         data-image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=500"
+                         data-category="বাণিজ্য ও অর্থনীতি"
+                         data-publisher="অনলাইন ডেস্ক"
+                         data-publish-date="০৮:০০, মঙ্গলবার, ০২ জুন, ২০২৬"
+                         data-update-date="০৮:৩০, মঙ্গলবার, ০২ জুন, ২০২৬"
+                         data-tags="ভিসা বন্ড, ব্যাংক, বাংলাদেশ ব্যাংক, বিনিয়োগ">
+                    <a href="#" class="economy-small-img-link">
+                        <div class="img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=500" alt="ভিসা বন্ডের অর্থ বিদেশে পাঠানো যাবে ব্যাংকের মাধ্যমে">
+                        </div>
+                    </a>
+                    <div class="economy-small-content">
+                        <h4 class="economy-small-title">
+                            <a href="#">ভিসা বন্ডের অর্থ বিদেশে পাঠানো যাবে ব্যাংকের মাধ্যমে</a>
+                        </h4>
+                        <p class="economy-small-excerpt">
+                            বিনিয়োগকারীদের লেনদেন আরও সহজ করতে visa বন্ডের মাধ্যমে অর্জিত অর্থ সরাসরি অনুমোদিত ব্যাংকের মাধ্যমে বিদেশে পাঠানোর অনুমতি দিয়েছে বাংলাদেশ ব্যাংক...
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Small Card 4 -->
+                <article class="economy-small-card"
+                         data-headline="গ্রামীণ শিল্পের সবুজায়নে ১০০০ কোটি টাকার বিশেষ তহবিল"
+                         data-image="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=500"
+                         data-category="বাণিজ্য ও অর্থনীতি"
+                         data-publisher="নিজস্ব প্রতিবেদক"
+                         data-publish-date="০৭:৪৫, মঙ্গলবার, ০২ জুন, ২০২৬"
+                         data-update-date="০৮:১৫, মঙ্গলবার, ০২ জুন, ২০২৬"
+                         data-tags="গ্রামীণ শিল্প, তহবিল, ঋণ সুবিধা, পরিবেশবান্ধব">
+                    <a href="#" class="economy-small-img-link">
+                        <div class="img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=500" alt="গ্রামীণ শিল্পের সবুজায়নে ১০০০ কোটি টাকার বিশেষ তহবিল">
+                        </div>
+                    </a>
+                    <div class="economy-small-content">
+                        <h4 class="economy-small-title">
+                            <a href="#">গ্রামীণ শিল্পের সবুজায়নে ১০০০ কোটি টাকার বিশেষ তহবিল</a>
+                        </h4>
+                        <p class="economy-small-excerpt">
+                            পরিবেশবান্ধব ও টেকসই গ্রামীণ শিল্পকারখানা গড়ে তুলতে এক হাজার কোটি টাকার একটি বিশেষ পুনঃঅর্থায়ন তহবিল গঠন করেছে কেন্দ্রীয় ব্যাংক...
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- 4-Column News Grid Container -->
+        <div class="latest-news-grid economy-page-grid">
+            <!-- Card 1 -->
+            <article class="news-card latest-news-card"
+                     data-headline="বিনিয়োগ টানতে দীর্ঘমেয়াদী করকাঠামো চায় ফরেন চেম্বার"
+                     data-image="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=400"
+                     data-category="অর্থনীতি"
+                     data-publisher="অনলাইন ডেস্ক"
+                     data-publish-date="০৬:০০, মঙ্গলবার, ০২ জুন, ২০২৬"
+                     data-update-date="০৬:৩০, মঙ্গলবার, ০২ জুন, ২০২৬"
+                     data-tags="বিনিয়োগ, ফরেন চেম্বার, করকাঠামো, বাজেট">
+                <div class="img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=400" alt="News Image">
+                </div>
+                <div class="card-content">
+                    <span class="category-badge">অর্থনীতি</span>
+                    <h3 class="card-title text-limit-2">
+                        <a href="#">বিনিয়োগ টানতে দীর্ঘমেয়াদী করকাঠামো চায় ফরেন চেম্বার</a>
+                    </h3>
+                    <p class="card-excerpt text-limit-3">আগামী জাতীয় বাজেট সামনে রেখে বিদেশি বিনিয়োগ বাড়াতে দীর্ঘমেয়াদি ও পূর্বানুমানযোগ্য করকাঠামো গড়ে তোলার প্রস্তাব দিয়েছে দেশে...</p>
+                    <div class="card-meta">
+                        <span><i class="far fa-clock"></i> ৩ ঘন্টা আগে</span>
+                        <a href="#" class="read-more">আরও পড়ুন <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="news-card latest-news-card"
+                     data-headline="রিজার্ভ বেড়ে কত বিলিয়ন ডলার, জানাল কেন্দ্রীয় ব্যাংক"
+                     data-image="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?auto=format&fit=crop&q=80&w=400"
+                     data-category="অর্থনীতি"
+                     data-publisher="নিজস্ব প্রতিবেদক"
+                     data-publish-date="০৫:৩০, মঙ্গলবার, ০২ জুন, ২০২৬"
+                     data-update-date="০৬:০০, মঙ্গলবার, ০২ জুন, ২০২৬"
+                     data-tags="রিজার্ভ, কেন্দ্রীয় ব্যাংক, ডলার, রেমিট্যান্স">
+                <div class="img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1596495578065-6e0763fa1178?auto=format&fit=crop&q=80&w=400" alt="News Image">
+                </div>
+                <div class="card-content">
+                    <span class="category-badge">অর্থনীতি</span>
+                    <h3 class="card-title text-limit-2">
+                        <a href="#">রিজার্ভ বেড়ে কত বিলিয়ন ডলার, জানাল কেন্দ্রীয় ব্যাংক</a>
+                    </h3>
+                    <p class="card-excerpt text-limit-3">দেশের বৈদেশিক মুদ্রার রিজার্ভে ইতিবাচক ধারা লক্ষ করা যাচ্ছে। কেন্দ্রীয় ব্যাংকের তথ্যমতে, গত এক মাসে রিজার্ভ উল্লেখযোগ্য হারে বৃদ্ধি পেয়েছে...</p>
+                    <div class="card-meta">
+                        <span><i class="far fa-clock"></i> ৪ ঘন্টা আগে</span>
+                        <a href="#" class="read-more">আরও পড়ুন <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="news-card latest-news-card"
+                     data-headline="বাজারে এলো পাঁচ টাকার নতুন নোট"
+                     data-image="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80&w=400"
+                     data-category="অর্থনীতি"
+                     data-publisher="অনলাইন ডেস্ক"
+                     data-publish-date="০৪:৪৫, মঙ্গলবার, ০২ জুন, ২০২৬"
+                     data-update-date="০৫:১৫, মঙ্গলবার, ০২ জুন, ২০২৬"
+                     data-tags="পাঁচ টাকা, নতুন নোট, নিরাপত্তা বৈশিষ্ট্য, কারেন্সি">
+                <div class="img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80&w=400" alt="News Image">
+                </div>
+                <div class="card-content">
+                    <span class="category-badge">অর্থনীতি</span>
+                    <h3 class="card-title text-limit-2">
+                        <a href="#">বাজারে এলো পাঁচ টাকার নতুন নোট</a>
+                    </h3>
+                    <p class="card-excerpt text-limit-3">বাংলাদেশ ব্যাংক বাজারে নতুন পাঁচ টাকার নোট অবমুক্ত করেছে। এতে বঙ্গবন্ধুর প্রতিকৃতিসহ নতুন কিছু নিরাপত্তা বৈশিষ্ট্য সংযুক্ত করা হয়েছে...</p>
+                    <div class="card-meta">
+                        <span><i class="far fa-clock"></i> ৫ ঘন্টা আগে</span>
+                        <a href="#" class="read-more">আরও পড়ুন <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="news-card latest-news-card"
+                     data-headline="আরও ৮ কোটি ৫০ লাখ ডলার কিনল বাংলাদেশ..."
+                     data-image="https://images.unsplash.com/photo-1621416894569-0f39ed31d247?auto=format&fit=crop&q=80&w=400"
+                     data-category="অর্থনীতি"
+                     data-publisher="নিজস্ব প্রতিবেদক"
+                     data-publish-date="০৩:২০, মঙ্গলবার, ০২ জুন, ২০২৬"
+                     data-update-date="০৪:০০, মঙ্গলবার, ০২ জুন, ২০২৬"
+                     data-tags="ডলার, বাংলাদেশ ব্যাংক, রিজার্ভ, মুদ্রাবাজার">
+                <div class="img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1621416894569-0f39ed31d247?auto=format&fit=crop&q=80&w=400" alt="News Image">
+                </div>
+                <div class="card-content">
+                    <span class="category-badge">অর্থনীতি</span>
+                    <h3 class="card-title text-limit-2">
+                        <a href="#">আরও ৮ কোটি ৫০ লাখ ডলার কিনল বাংলাদেশ...</a>
+                    </h3>
+                    <p class="card-excerpt text-limit-3">দেশের বৈদেশিক মুদ্রার বাজারে স্থিতিশীলতা ধরে রাখতে আবারও বাজার থেকে ডলার কিনেছে বাংলাদেশ ব্যাংক। মঙ্গলবার ছয়টি বাণিজ্যিক...</p>
+                    <div class="card-meta">
+                        <span><i class="far fa-clock"></i> ৬ ঘন্টা আগে</span>
+                        <a href="#" class="read-more">আরও পড়ুন <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Card 5 -->
+            <article class="news-card latest-news-card"
+                     data-headline="ডিএসইতে বাড়ছে অধিকাংশ শেয়ার ও..."
+                     data-image="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=400"
+                     data-category="শেয়ারবাজার"
+                     data-publisher="অনলাইন ডেস্ক"
+                     data-publish-date="০২:০০, মঙ্গলবার, ০২ জুন, ২০২৬"
+                     data-update-date="০২:৩০, মঙ্গলবার, ০২ জুন, ২০২৬"
+                     data-tags="ডিএসই, শেয়ারবাজার, লেনদেন, সূচক বৃদ্ধি">
+                <div class="img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&q=80&w=400" alt="News Image">
+                </div>
+                <div class="card-content">
+                    <span class="category-badge">শেয়ারবাজার</span>
+                    <h3 class="card-title text-limit-2">
+                        <a href="#">ডিএসইতে বাড়ছে অধিকাংশ শেয়ার ও...</a>
+                    </h3>
+                    <p class="card-excerpt text-limit-3">সপ্তাহের তৃতীয় কার্যদিবসে ঢাকা স্টক এক্সচেঞ্জে (ডিএসই) লেনদেন হওয়া অধিকাংশ প্রতিষ্ঠানের শেয়ার ও ইউনিটের দাম বেড়েছে। এতে মূল্যসূচকের...</p>
+                    <div class="card-meta">
+                        <span><i class="far fa-clock"></i> ৮ ঘন্টা আগে</span>
+                        <a href="#" class="read-more">আরও পড়ুন <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="news-card latest-news-card"
+                     data-headline="ব্যাংক খাতে খেলাপি ঋণ আবার বাড়ল"
+                     data-image="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80&w=400"
+                     data-category="ব্যাংকিং"
+                     data-publisher="নিজস্ব প্রতিবেদক"
+                     data-publish-date="০১:১৫, মঙ্গলবার, ০২ জুন, ২০২৬"
+                     data-update-date="০১:৪৫, মঙ্গলবার, ০২ জুন, ২০২৬"
+                     data-tags="খেলাপি ঋণ, bank খাত, বাংলাদেশ ব্যাংক, ফাইন্যান্স">
+                <div class="img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80&w=400" alt="News Image">
+                </div>
+                <div class="card-content">
+                    <span class="category-badge">ব্যাংকিং</span>
+                    <h3 class="card-title text-limit-2">
+                        <a href="#">ব্যাংক খাতে খেলাপি ঋণ আবার বাড়ল</a>
+                    </h3>
+                    <p class="card-excerpt text-limit-3">নতুন করে ব্যাংক খাতে খেলাপি ঋণ বেড়েছে। গত প্রান্তিকে খেলাপি ঋণের পরিমাণ আগের চেয়ে কয়েক হাজার কোটি টাকা বৃদ্ধি পেয়েছে বলে বাংলাদেশ ব্যাংক জানিয়েছে।</p>
+                    <div class="card-meta">
+                        <span><i class="far fa-clock"></i> ৯ ঘন্টা আগে</span>
+                        <a href="#" class="read-more">আরও পড়ুন <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 7 -->
+            <article class="news-card latest-news-card"
+                     data-headline="রফতানি আয়ে নতুন রেকর্ড"
+                     data-image="https://images.unsplash.com/photo-1542222024-c39e2281f121?auto=format&fit=crop&q=80&w=400"
+                     data-category="বাণিজ্য"
+                     data-publisher="নিজস্ব প্রতিবেদক"
+                     data-publish-date="১২:০০, মঙ্গলবার, ০২ জুন, ২০২৬"
+                     data-update-date="১২:৩০, মঙ্গলবার, ০২ জুন, ২০২৬"
+                     data-tags="রফতানি আয়, তৈরি পোশাক, নতুন রেকর্ড, বাণিজ্য">
+                <div class="img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1542222024-c39e2281f121?auto=format&fit=crop&q=80&w=400" alt="News Image">
+                </div>
+                <div class="card-content">
+                    <span class="category-badge">বাণিজ্য</span>
+                    <h3 class="card-title text-limit-2">
+                        <a href="#">রফতানি আয়ে নতুন রেকর্ড</a>
+                    </h3>
+                    <p class="card-excerpt text-limit-3">চলতি অর্থবছরের প্রথম প্রান্তিকে তৈরি পোশাক খাতের হাত ধরে রফতানি আয়ে নতুন রেকর্ড সৃষ্টি হয়েছে। যা অর্থনীতিতে ইতিবাচক প্রভাব ফেলছে।</p>
+                    <div class="card-meta">
+                        <span><i class="far fa-clock"></i> ১০ ঘন্টা আগে</span>
+                        <a href="#" class="read-more">আরও পড়ুন <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 8 -->
+            <article class="news-card latest-news-card"
+                     data-headline="নতুন স্টার্টআপদের জন্য সহজ ঋণ সুবিধা"
+                     data-image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=400"
+                     data-category="স্টার্টআপ"
+                     data-publisher="অনলাইন ডেস্ক"
+                     data-publish-date="১১:০০, মঙ্গলবার, ০২ জুন, ২০২৬"
+                     data-update-date="১১:৩০, মঙ্গলবার, ০২ জুন, ২০২৬"
+                     data-tags="স্টার্টআপ, ঋণ সুবিধা, বেসরকারি ব্যাংক, উদ্যোক্তা">
+                <div class="img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=400" alt="News Image">
+                </div>
+                <div class="card-content">
+                    <span class="category-badge">স্টার্টআপ</span>
+                    <h3 class="card-title text-limit-2">
+                        <a href="#">নতুন স্টার্টআপদের জন্য সহজ ঋণ সুবিধা</a>
+                    </h3>
+                    <p class="card-excerpt text-limit-3">দেশি-বিদেশি বিনিয়োগকারীদের সহায়তায় নতুন উদ্যোক্তাদের জন্য জামানতবিহীন সহজ ঋণ সুবিধা চালু করতে যাচ্ছে কয়েকটি বেসরকারি ব্যাংক।</p>
+                    <div class="card-meta">
+                        <span><i class="far fa-clock"></i> ১১ ঘন্টা আগে</span>
+                        <a href="#" class="read-more">আরও পড়ুন <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="economy-footer-divider"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Column 1: Logo & Description -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="logo">
+                        <div class="logo-box">
+                            <img src="assets/images/logo.jpg" alt="Channel One News Logo" class="logo-img">
+                        </div>
+                        <span class="logo-text">Channel One News</span>
+                    </div>
+                    <p class="footer-description">Bangladesh’s first 4K 24/7 news network, Channel One presents Channel One News brings breaking news, full bulletins, talk shows, live updates, and more!</p>
+                    <div class="footer-social-links">
+                        <a href="https://www.facebook.com/channelonenewsdhaka/" target="_blank" rel="noopener noreferrer" class="footer-social-icon facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/onenewsbd" target="_blank" rel="noopener noreferrer" class="footer-social-icon twitter" title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/channelonenewsbd/" target="_blank" rel="noopener noreferrer" class="footer-social-icon instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@ChannelOneNewsBD" target="_blank" rel="noopener noreferrer" class="footer-social-icon youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Photo Gallery -->
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-col-title">ফটো গ্যালারি</h3>
+                    <div class="footer-photo-grid">
+                        <a href="#" class="footer-photo-item"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&q=80&w=150" alt="ফটো গ্যালারি"></a>
+                        <a href="#" class="footer-photo-item"><img src="https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?auto=format&fit=crop&q=80&w=150" alt="ফটো গ্যালারি"></a>
+                        <a href="#" class="footer-photo-item"><img src="https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?auto=format&fit=crop&q=80&w=150" alt="ফটো গ্যালারি"></a>
+                        <a href="#" class="footer-photo-item"><img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&q=80&w=150" alt="ফটো গ্যালারি"></a>
+                        <a href="#" class="footer-photo-item"><img src="https://images.unsplash.com/photo-1475503572774-15a45e5d60b9?auto=format&fit=crop&q=80&w=150" alt="ফটো গ্যালারি"></a>
+                        <a href="#" class="footer-photo-item"><img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&q=80&w=150" alt="ফটো গ্যালারি"></a>
+                    </div>
+                </div>
+
+                <!-- Column 3: Categories -->
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-col-title">বিষয়সমূহ</h3>
+                    <div class="footer-links-grid">
+                        <ul class="footer-links-list">
+                            <li><a href="#">আন্তর্জাতিক</a></li>
+                            <li><a href="#">সারাদেশ</a></li>
+                            <li><a href="#">রাজনীতি</a></li>
+                            <li><a href="#">খেলাধুলা</a></li>
+                            <li><a href="#">প্রযুক্তি</a></li>
+                        </ul>
+                        <ul class="footer-links-list">
+                            <li><a href="#">বিনোদন</a></li>
+                            <li><a href="#">মতামত</a></li>
+                            <li><a href="#">চাকরি</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 4: Contact Address -->
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-col-title">যোগাযোগের ঠিকানা</h3>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Uday Tower, 57,57/A Gulshan Avenue, Gulshan, Dhaka, Bangladesh</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>01713-097517</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="row align-items-center g-3">
+                    <div class="col-md-6 text-center text-md-start">
+                        <a href="#" class="footer-bottom-link">গোপনীয়তা নীতি</a>
+                        <span class="footer-bottom-sep">|</span>
+                        <a href="#" class="footer-bottom-link">ব্যবহারের শর্তাবলী</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <p class="footer-copyright mb-0">
+                            &copy; January 24, 2006.-২০২৬ Channel one news। সর্বস্বত্ব সংরক্ষিত।
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js?v=1.14.0"></script>
+</body>
+</html>

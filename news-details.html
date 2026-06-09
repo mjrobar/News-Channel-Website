@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>খবরের বিস্তারিত - Channel One News</title>
+    <!-- Bootstrap Grid, Utilities & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap-utilities.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/style.css?v=1.38.0">
+    <link rel="stylesheet" href="assets/css/components.css?v=1.38.0">
+    <link rel="stylesheet" href="assets/css/home.css?v=1.38.0">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-inner">
+            <!-- Left Section: Logo & Navigation -->
+            <div class="navbar-left">
+                <div class="logo">
+                    <div class="logo-box">
+                        <img src="assets/images/logo.jpg" alt="Channel One News Logo" class="logo-img">
+                    </div>
+                    <span class="logo-text">Channel One News</span>
+                </div>
+                <ul class="nav-links">
+                    <li class="nav-item">
+                        <a href="index.html">
+                            <i class="fas fa-home"></i>
+                            <span>বর্তমান খবর</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="economy.html">
+                            <i class="fas fa-chart-line"></i>
+                            <span>অর্থনীতি</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fas fa-running"></i>
+                            <span>খেলাধুলা</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fas fa-globe"></i>
+                            <span>আন্তর্জাতিক</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fas fa-flag"></i>
+                            <span>জাতীয়</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fas fa-landmark"></i>
+                            <span>রাজনীতি</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <i class="fas fa-briefcase"></i>
+                            <span>শেয়ারবাজার</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="dropdown-trigger">
+                            <span>আরো</span>
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-heartbeat"></i>
+                                    <span>স্বাস্থ্য</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>অপরাধ</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fas fa-gavel"></i>
+                                    <span>আদালত</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right Section: Watch Live & Social Icons -->
+            <div class="navbar-right">
+                <a href="https://www.youtube.com/watch?v=gPeWMOof-IM" target="_blank" rel="noopener noreferrer" class="watch-live-btn">
+                    <i class="fas fa-video"></i>
+                    <span>Live</span>
+                </a>
+                <div class="nav-divider"></div>
+                <div class="nav-social-links">
+                    <a href="https://www.facebook.com/channelonenewsdhaka/" target="_blank" rel="noopener noreferrer" class="nav-social-icon facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/@ChannelOneNewsBD" target="_blank" rel="noopener noreferrer" class="nav-social-icon youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://x.com/onenewsbd" target="_blank" rel="noopener noreferrer" class="nav-social-icon twitter" title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/channelonenewsbd/" target="_blank" rel="noopener noreferrer" class="nav-social-icon instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breaking News Ticker -->
+    <div class="container">
+        <div class="ticker-wrap">
+            <div class="ticker-heading">
+                <div class="ticker-heading-content active" id="ticker-heading-headline">
+                    <i class="fas fa-bullhorn" style="margin-right: 8px;"></i>
+                    <span>শিরোনাম</span>
+                </div>
+                <div class="ticker-heading-content slide-below" id="ticker-heading-date">
+                    <span id="ticker-date-text">০১ জুন ২০২৬</span>
+                </div>
+                <div class="ticker-heading-content slide-below" id="ticker-heading-time">
+                    <span id="ticker-time-text">AM 10:16:43</span>
+                </div>
+            </div>
+            <div style="overflow: hidden; flex-grow: 1; height: 100%;">
+                <div class="ticker-news">
+                    <span class="ticker-category-tag">বাণিজ্য ও অর্থনীতি</span>
+                    <a href="#" class="ticker-item">চালু হচ্ছে 'ই-ঋণ' সেবা, লাগবে না ব্যাংক; ঘরে বসেই</a>
+                    <span>●</span>
+                    <a href="#" class="ticker-item">চলতি অর্থবছর শেষে প্রবাসী আয়ে নতুন রেকর্ড গড়ার ইঙ্গিত</a>
+                    <span>●</span>
+                    <span class="ticker-category-tag">জাতীয়</span>
+                    <a href="#" class="ticker-item">২০২৭ সালের এসএসসি পরীক্ষা শুরু ৭ জানুয়ারি, এইচএসসি ৬ জুন</a>
+                    <span>●</span>
+                    <a href="#" class="ticker-item">বাংলাদেশ রেলওয়েতে যুক্ত হচ্ছে নতুন ৪০টি ব্রডগেজ ইঞ্জিন</a>
+                    <span>●</span>
+                    <a href="#" class="ticker-item">সারা দেশে ডেঙ্গু প্রতিরোধে দেশব্যাপী সচেতনতা অভিযান শুরু</a>
+                    <span>●</span>
+                    <span class="ticker-category-tag">খেলাধুলা</span>
+                    <a href="#" class="ticker-item">জাকার নেতৃত্বে সুইজারল্যান্ডের বিশ্বকাপ দলে ডাক পেলেন যারা</a>
+                    <span>●</span>
+                    <a href="#" class="ticker-item">আপিল খারিজ, আইপিএলের প্লে-অফে খেলতে পারবেন না মোস্তাফিজ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container" style="margin-top: 24px; margin-bottom: 0;">
+        <div class="news-details-body">
+            <!-- Top Row (Header Info) -->
+            <div class="news-details-top-row">
+                <div class="news-details-meta-left">
+                    <i class="far fa-clock"></i>
+                    <span id="detailsPublishDate">প্রকাশ: ১১:১৪, মঙ্গলবার, ০২ জুন, ২০২৬</span>
+                    <span class="meta-sep">/</span>
+                    <span id="detailsUpdateDate">আপডেট: ১১:১৮, মঙ্গলবার, ০২ জুন, ২০২৬</span>
+                </div>
+                <div class="news-details-breadcrumb-middle">
+                    <a href="index.html" class="home-icon-link"><i class="fas fa-home"></i></a>
+                    <span class="bread-sep">/</span>
+                    <span id="detailsBreadcrumbCategory" class="current-cat">অর্থনীতি</span>
+                </div>
+                <div class="news-details-share-right">
+                    <div class="share-box-container">
+                        <a href="#" class="fb-share-btn" onclick="event.preventDefault(); alert('শেয়ার লিংক কপি করা হয়েছে!');">
+                            <i class="fab fa-facebook-f"></i> Share <span class="share-count">0</span>
+                        </a>
+                        <div class="share-sep-line"></div>
+                        <a href="#" class="google-news-btn" title="Google News" onclick="event.preventDefault();">
+                            <svg viewBox="0 0 24 24" width="20" height="20" style="vertical-align: middle;">
+                                <path fill="#4285F4" d="M20.64 12.2c0-.62-.05-1.22-.15-1.8H12v3.42h4.84c-.2.98-.78 1.8-1.68 2.38v1.97h2.72c1.6-1.42 2.76-3.77 2.76-6.52z"/>
+                                <path fill="#34A853" d="M12 21c2.43 0 4.47-.78 5.96-2.13l-2.72-1.97c-.75.48-1.72.78-3.24.78-2.5 0-4.6-1.62-5.36-3.8H3.84v2.03C5.35 18.92 8.44 21 12 21z"/>
+                                <path fill="#FBBC05" d="M6.64 13.88c-.2-.58-.3-1.2-.3-1.88s.1-1.3.3-1.88V8.09H3.84C3.1 9.5 2.68 11.2 2.68 13s.42 3.5 1.16 4.91l2.8-2.03z"/>
+                                <path fill="#EA4335" d="M12 5.08c1.32 0 2.5.43 3.44 1.3l2.58-2.5C16.46 2.47 14.42 1.68 12 1.68 8.44 1.68 5.35 3.76 3.84 6.78l2.8 2.03c.76-2.18 2.86-3.8 5.36-3.8z"/>
+                            </svg>
+                        </a>
+                        <div class="share-sep-line"></div>
+                        <a href="#" class="print-share-btn" onclick="event.preventDefault(); window.print();">
+                            <i class="fas fa-print"></i> প্রিন্ট
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="news-details-headline" id="detailsHeadline">হেডলাইন লোড হচ্ছে...</h1>
+
+            <!-- Publisher Name -->
+            <div class="news-details-publisher"><span id="detailsPublisher">অনлайн ডেস্ক</span></div>
+
+            <!-- Featured Image -->
+            <div class="news-details-image-container">
+                <img id="detailsFeaturedImage" src="" alt="Featured Image">
+            </div>
+
+            <!-- Divider Line -->
+            <hr class="news-details-divider">
+
+            <!-- News Details Description -->
+            <div class="news-details-description-content" id="detailsDescription">
+                <!-- Dynamic paragraphs will go here -->
+            </div>
+
+            <!-- Footer Info (Channel One News / Author) -->
+            <div class="news-details-footer-info">
+                <span class="brand-name">Channel One News</span>
+                <span class="info-slash">/</span>
+                <span class="reporter-name" id="detailsFooterReporter">অনлайн ডেস্ক</span>
+            </div>
+
+            <!-- Social Icons in White Border Container -->
+            <div class="news-details-social-container">
+                <div class="modal-social-links-inner">
+                    <a href="https://www.facebook.com/channelonenewsdhaka/" target="_blank" rel="noopener" class="modal-social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/@ChannelOneNewsBD" target="_blank" rel="noopener" class="modal-social-icon youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://x.com/onenewsbd" target="_blank" rel="noopener" class="modal-social-icon twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com/channelonenewsbd/" target="_blank" rel="noopener" class="modal-social-icon instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Tag Card -->
+            <div class="news-details-tag-card" id="detailsTagCard">
+                <!-- Dynamic tag chips inside blue border box -->
+            </div>
+
+            <!-- Related News Title Card -->
+            <div class="news-details-related-title-card">
+                সম্পর্কিত আরও সব খবর
+            </div>
+
+            <!-- Related News Grid (8 cards, size 224 x 265.28px) -->
+            <div class="news-details-related-grid">
+                <!-- Card 1 -->
+                <div class="related-news-modal-card">
+                    <div class="related-card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=300" alt="Related News 1">
+                    </div>
+                    <div class="related-card-title">ব্যাংক ইন্টারেস্ট রেট বাড়ার সম্ভাবনা দেখছেন অর্থনীতিবিদরা</div>
+                </div>
+                <!-- Card 2 -->
+                <div class="related-news-modal-card">
+                    <div class="related-card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=300" alt="Related News 2">
+                    </div>
+                    <div class="related-card-title">গার্মেন্টস সেক্টরে রফতানি অর্ডারে নতুন রেকর্ডের আশা</div>
+                </div>
+                <!-- Card 3 -->
+                <div class="related-news-modal-card">
+                    <div class="related-card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=300" alt="Related News 3">
+                    </div>
+                    <div class="related-card-title">মোবাইল ব্যাংকিংয়ে লেনদেনের সহজ ও নতুন নিয়ম চালু</div>
+                </div>
+                <!-- Card 4 -->
+                <div class="related-news-modal-card">
+                    <div class="related-card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1618042164219-62c820f10723?auto=format&fit=crop&q=80&w=300" alt="Related News 4">
+                    </div>
+                    <div class="related-card-title">ডিজিটাল কমার্স ও ই-কমার্স খাতে নতুন নীতিমালা প্রণয়ন</div>
+                </div>
+                <!-- Card 5 -->
+                <div class="related-news-modal-card">
+                    <div class="related-card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&q=80&w=300" alt="Related News 5">
+                    </div>
+                    <div class="related-card-title">পুঁজিবাজারে সূচকের বড় উত্থান, বিনিয়োগকারীদের স্বস্তি</div>
+                </div>
+                <!-- Card 6 -->
+                <div class="related-news-modal-card">
+                    <div class="related-card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=300" alt="Related News 6">
+                    </div>
+                    <div class="related-card-title">নতুন বাজেটে করমুক্ত আয়ের সীমা বাড়ানোর প্রস্তাব</div>
+                </div>
+                <!-- Card 7 -->
+                <div class="related-news-modal-card">
+                    <div class="related-card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&q=80&w=300" alt="Related News 7">
+                    </div>
+                    <div class="related-card-title">বৈদেশিক মুদ্রার রিজার্ভে ইতিবাচক হাওয়া, রেমিট্যান্স প্রবাহ বৃদ্ধি</div>
+                </div>
+                <!-- Card 8 -->
+                <div class="related-news-modal-card">
+                    <div class="related-card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=300" alt="Related News 8">
+                    </div>
+                    <div class="related-card-title">স্মার্ট কৃষি উদ্যোক্তাদের জন্য বিশেষ ঋণের ঘোষণা সরকারের</div>
+                </div>
+            </div>
+
+            <!-- Footer Divider -->
+            <div class="news-details-footer-divider"></div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Column 1: Logo & Description -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="logo">
+                        <div class="logo-box">
+                            <img src="assets/images/logo.jpg" alt="Channel One News Logo" class="logo-img">
+                        </div>
+                        <span class="logo-text">Channel One News</span>
+                    </div>
+                    <p class="footer-description">Bangladesh’s first 4K 24/7 news network, Channel One presents Channel One News brings breaking news, full bulletins, talk shows, live updates, and more!</p>
+                    <div class="footer-social-links">
+                        <a href="https://www.facebook.com/channelonenewsdhaka/" target="_blank" rel="noopener noreferrer" class="footer-social-icon facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/onenewsbd" target="_blank" rel="noopener noreferrer" class="footer-social-icon twitter" title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/channelonenewsbd/" target="_blank" rel="noopener noreferrer" class="footer-social-icon instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@ChannelOneNewsBD" target="_blank" rel="noopener noreferrer" class="footer-social-icon youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Photo Gallery -->
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-col-title">ফটো গ্যালারি</h3>
+                    <div class="footer-photo-grid">
+                        <a href="#" class="footer-photo-item"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&q=80&w=150" alt="ফটো গ্যালারি"></a>
+                        <a href="#" class="footer-photo-item"><img src="https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?auto=format&fit=crop&q=80&w=150" alt="ফটো গ্যালারি"></a>
+                        <a href="#" class="footer-photo-item"><img src="https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?auto=format&fit=crop&q=80&w=150" alt="ফটো গ্যালারি"></a>
+                        <a href="#" class="footer-photo-item"><img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&q=80&w=150" alt="ফটো গ্যালারি"></a>
+                        <a href="#" class="footer-photo-item"><img src="https://images.unsplash.com/photo-1475503572774-15a45e5d60b9?auto=format&fit=crop&q=80&w=150" alt="ফটো গ্যালারি"></a>
+                        <a href="#" class="footer-photo-item"><img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&q=80&w=150" alt="ফটো গ্যালারি"></a>
+                    </div>
+                </div>
+
+                <!-- Column 3: Categories -->
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-col-title">বিষয়সমূহ</h3>
+                    <div class="footer-links-grid">
+                        <ul class="footer-links-list">
+                            <li><a href="#">আন্তর্জাতিক</a></li>
+                            <li><a href="#">সারাদেশ</a></li>
+                            <li><a href="#">রাজনীতি</a></li>
+                            <li><a href="#">খেলাধুলা</a></li>
+                            <li><a href="#">প্রযুক্তি</a></li>
+                        </ul>
+                        <ul class="footer-links-list">
+                            <li><a href="#">বিনোদন</a></li>
+                            <li><a href="#">মতামত</a></li>
+                            <li><a href="#">চাকরি</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 4: Contact Address -->
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-col-title">যোগাযোগের ঠিকানা</h3>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Uday Tower, 57,57/A Gulshan Avenue, Gulshan, Dhaka, Bangladesh</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>01713-097517</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="row align-items-center g-3">
+                    <div class="col-md-6 text-center text-md-start">
+                        <a href="#" class="footer-bottom-link">গোপনীয়তা নীতি</a>
+                        <span class="footer-bottom-sep">|</span>
+                        <a href="#" class="footer-bottom-link">ব্যবহারের শর্তাবলী</a>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <p class="footer-copyright mb-0">
+                            &copy; January 24, 2006.-২০২৬ Channel one news। সর্বস্বত্ব সংরক্ষিত।
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js?v=1.14.0"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Parse URL query parameters
+        const params = new URLSearchParams(window.location.search);
+        const headline = params.get('headline') || 'বাংলাদেশ থেকে ৬ হাজার ট্যাক্সিচালক নেবে দুবাই';
+        const image = params.get('image') || 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=800';
+        const category = params.get('category') || 'অর্থনীতি';
+        const publisher = params.get('publisher') || 'অনлайн ডেস্ক';
+        const publishDate = params.get('publishDate') || '১১:১৪, মঙ্গলবার, ০২ জুন, ২০২৬';
+        const updateDate = params.get('updateDate') || '১১:১৮, মঙ্গলবার, ০২ জুন, ২০২৬';
+        const tagsStr = params.get('tags') || 'দুবাই, ট্যাক্সিচালক, কর্মসংস্থান, রেমিট্যান্স';
+        const tags = tagsStr.split(',').map(t => t.trim());
+
+        // Populate elements
+        document.getElementById('detailsHeadline').textContent = headline;
+        document.getElementById('detailsPublishDate').textContent = `প্রকাশ: ${publishDate}`;
+        document.getElementById('detailsUpdateDate').textContent = `আপডেট: ${updateDate}`;
+        document.getElementById('detailsBreadcrumbCategory').textContent = category;
+        document.getElementById('detailsPublisher').textContent = publisher;
+        document.getElementById('detailsFooterReporter').textContent = publisher;
+
+        const imgEl = document.getElementById('detailsFeaturedImage');
+        imgEl.setAttribute('src', image);
+        imgEl.setAttribute('alt', headline);
+
+        // Generate description
+        const detailsDescription = document.getElementById('detailsDescription');
+        detailsDescription.innerHTML = `
+            <p><strong>ঢাকা, ০২ জুন ২০২৬:</strong> ${headline}-এর বিষয়ে আজ এক গুরুত্বপূর্ণ আলোচনা ও নীতি নির্ধারণী বৈঠক অনুষ্ঠিত হয়েছে। দেশের সামগ্রিক অর্থনৈতিক উন্নয়নের কথা বিবেচনা করে সংশ্লিষ্ট কর্তৃপক্ষ এই বিষয়ে কিছু যুগান্তকারী সিদ্ধান্ত গ্রহণ করেছেন। বৈঠকের শুরুতেই সংশ্লিষ্ট দপ্তরের পক্ষ থেকে একটি খসড়া প্রস্তাবনা পেশ করা হয়, যা উপস্থিত সদস্যগণ চুলচেরা বিশ্লেষণ করেন। বিশেষজ্ঞরা মনে করছেন, এই সিদ্ধান্ত বাস্তবায়িত হলে দেশের বাণিজ্যিক সেক্টরে বড় ধরনের ইতিবাচক পরিবর্তন আসবে। বিশেষ করে তরুণ উদ্যোক্তা এবং সাধারণ ব্যবসায়ী সমাজ এর দ্বারা ব্যাপকভাবে উপকৃত হবেন।</p>
+            
+            <p>দেশের অর্থনীতি এখন একটি রূপান্তরকালীন সময়ের মধ্য দিয়ে যাচ্ছে। বিশ্ববাজারের অস্থিতিশীল পরিস্থিতি এবং বৈশ্বিক নানা পরিবর্তনের নেতিবাচক প্রভাব যাতে আমাদের স্থানীয় অর্থনীতিতে না পড়ে, সেজন্য আগে থেকেই সতর্কতামূলক উদ্যোগ নেওয়া প্রয়োজন। এই পদক্ষেপটি সেই লক্ষ্যেই একটি অন্যতম মাইলফলক হিসেবে কাজ করবে বলে আশা করা হচ্ছে। এই সিদ্ধান্তের আওতায় ঋণ সুবিধা সহজীকরণ, সুদের হার পুনঃনির্ধারণ এবং নতুন বিনিয়োগবান্ধব নীতিমালার বাস্তবায়ন জোরদার করা হবে। সংশ্লিষ্ট বাণিজ্যিক অ্যাসোসিয়েশনগুলো এই সিদ্ধান্তকে সাধুবাদ জানিয়েছে এবং সরকারের পক্ষ থেকে পূর্ণাঙ্গ সহায়তার আশ্বাস দেওয়া হয়েছে।</p>
+            
+            <p>অর্থনৈতিক বিশ্লেষক ড. রাইহান চৌধুরী জানান, "এই ধরণের উদ্যোগ দীর্ঘমেয়াদে দেশের জিডিপি প্রবৃদ্ধিতে সহায়তা করবে। তবে সবচেয়ে বড় চ্যালেঞ্জ হবে এর সফল ও স্বচ্ছ বাস্তবায়ন। কোনো ধরণের আমলাতান্ত্রিক জটিলতা ছাড়া যদি সাধারণ বিনিয়োগকারীরা এই সুযোগ সুবিধাগুলো গ্রহণ করতে পারেন, তবেই এই প্রবৃদ্ধির সুফল দেশের প্রান্তিক জনগোষ্ঠীর কাছে পৌঁছানো সম্ভব হবে।" বিশেষ করে ক্ষুদ্র ও মাঝারি শিল্প (SME) খাতে প্রণোদনা বৃদ্ধি দেশের অভ্যন্তরীণ উৎপাদনশীলতা কয়েকগুণ বাড়িয়ে দেবে। সরকারের পাশাপাশি বেসরকারি ব্যাংক ও আর্থিক প্রতিষ্ঠানগুলোকেও এই কার্যক্রমে স্বতঃস্ফূর্তভাবে এগিয়ে আসতে হবে।</p>
+            
+            <p>পরিশেষে বলা যায়, বর্তমান সরকারের ধারাবাহিক অর্থনৈতিক সংস্কার কর্মসূচির অংশ হিসেবে এই সময়োচিত পদক্ষেপ অত্যন্ত প্রশংসনীয়। এটি যেমন বৈদেশিক বিনিয়োগ আকৃষ্ট করতে সহায়তা করবে, তেমনি দেশীয় বাজারে স্থিতিশীলতা ফিরিয়ে আনবে। এই প্রক্রিয়াটির মাধ্যমে বেকারত্ব দূরীকরণ এবং নতুন কর্মসংস্থান সৃষ্টির ক্ষেত্রেও উল্লেখযোগ্য অগ্রগতি হবে। আশা করা যাচ্ছে, আগামী কয়েক মাসের মধ্যেই সাধারণ মানুষ এই সিদ্ধান্তের প্রথম পর্যায়ের ইতিবাচক ফলাফল স্বচক্ষে দেখতে পাবেন। এই নতুন উদ্যোগের অগ্রগতি এবং এর প্রভাব পর্যালোচনা করতে নিয়মিত মনিটরিং কমিটি গঠন করা হয়েছে।</p>
+        `;
+
+        // Populate tags
+        const tagCard = document.getElementById('detailsTagCard');
+        tagCard.innerHTML = '';
+        tags.forEach(tag => {
+            const tagEl = document.createElement('a');
+            tagEl.className = 'tag-chip';
+            tagEl.setAttribute('href', '#');
+            tagEl.textContent = `#${tag}`;
+            tagCard.appendChild(tagEl);
+        });
+    });
+    </script>
+</body>
+</html>

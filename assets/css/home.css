@@ -3976,7 +3976,7 @@ img,
     color: #4b5563; /* Premium slate gray */
     text-decoration: none;
     font-family: var(--font-body);
-    font-size: 1.05rem;
+    font-size: 18.4px;
     font-weight: 600; /* Semi-bold / Medium as requested */
     padding: 6px 14px;
     transition: color var(--transition-fast), background-color var(--transition-fast), font-weight var(--transition-fast);

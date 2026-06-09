@@ -617,7 +617,123 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(nextSlide, intervalTime);
     };
 
+    // Initialize Mobile Navigation Drawer dynamically
+    const initMobileDrawer = () => {
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        if (!mobileToggle) return;
+
+        // Create Drawer and Overlay elements if they don't exist already
+        if (document.getElementById('nav-drawer')) return;
+
+        const drawer = document.createElement('div');
+        drawer.className = 'nav-drawer';
+        drawer.id = 'nav-drawer';
+
+        const overlay = document.createElement('div');
+        overlay.className = 'drawer-overlay';
+        overlay.id = 'drawer-overlay';
+
+        // Get Logo, Nav Links, and Social Links
+        const desktopLogo = document.querySelector('.navbar-left .logo');
+        const logoHtml = desktopLogo ? desktopLogo.outerHTML : '';
+        
+        const desktopLinks = document.querySelector('.navbar-left .nav-links');
+        let linksHtml = '';
+        if (desktopLinks) {
+            const clonedLinks = desktopLinks.cloneNode(true);
+            clonedLinks.className = 'drawer-links';
+            
+            // Clean inline styles and make sure it has drawer menu item class structure
+            clonedLinks.querySelectorAll('.dropdown-menu').forEach(menu => {
+                menu.removeAttribute('style'); // Clear inline styles
+            });
+            linksHtml = clonedLinks.outerHTML;
+        }
+
+        const desktopSocial = document.querySelector('.navbar-right .nav-social-links');
+        let socialHtml = '';
+        if (desktopSocial) {
+            const clonedSocial = desktopSocial.cloneNode(true);
+            clonedSocial.className = 'drawer-social-links';
+            socialHtml = clonedSocial.outerHTML;
+        }
+
+        drawer.innerHTML = `
+            <div class="drawer-header">
+                ${logoHtml}
+                <button class="drawer-close" id="drawer-close-btn" aria-label="Close Menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="drawer-body">
+                ${linksHtml}
+                <div class="drawer-divider"></div>
+                <div class="drawer-social-box">
+                    <span class="drawer-social-title">আমাদের সাথে যুক্ত থাকুন</span>
+                    ${socialHtml}
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(drawer);
+        document.body.appendChild(overlay);
+
+        const closeBtn = document.getElementById('drawer-close-btn');
+
+        const openDrawer = () => {
+            drawer.classList.add('open');
+            overlay.classList.add('show');
+            document.body.style.overflow = 'hidden'; // Lock page scroll
+        };
+
+        const closeDrawer = () => {
+            drawer.classList.remove('open');
+            overlay.classList.remove('show');
+            document.body.style.overflow = ''; // Release page scroll
+        };
+
+        mobileToggle.addEventListener('click', openDrawer);
+        closeBtn.addEventListener('click', closeDrawer);
+        overlay.addEventListener('click', closeDrawer);
+
+        // Handle Dropdowns in Drawer (Accordion Style)
+        const drawerDropdowns = drawer.querySelectorAll('.drawer-links .dropdown');
+        drawerDropdowns.forEach(dropdown => {
+            const trigger = dropdown.querySelector('.dropdown-trigger');
+            const menu = dropdown.querySelector('.dropdown-menu');
+            if (trigger && menu) {
+                // Toggle sub-menu height dynamically on click
+                trigger.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const isActive = dropdown.classList.contains('active');
+                    
+                    // Close all other dropdowns in the drawer for accordion effect
+                    drawerDropdowns.forEach(otherDropdown => {
+                        if (otherDropdown !== dropdown) {
+                            otherDropdown.classList.remove('active');
+                            const otherMenu = otherDropdown.querySelector('.dropdown-menu');
+                            if (otherMenu) {
+                                otherMenu.style.maxHeight = '0';
+                            }
+                        }
+                    });
+
+                    if (isActive) {
+                        dropdown.classList.remove('active');
+                        menu.style.maxHeight = '0';
+                    } else {
+                        dropdown.classList.add('active');
+                        menu.style.maxHeight = menu.scrollHeight + 'px';
+                    }
+                });
+            }
+        });
+    };
+
     initHeroImageSlider();
     initNewsDetailsNavigation();
+    initMobileDrawer();
 });
 

@@ -654,12 +654,12 @@
     contain: layout paint;
 }
 .ticker-news {
-    display: flex;
+    display: inline-flex;
     height: 100%;
-    animation: ticker 32s linear infinite; /* Speed reduced from 20s to 32s for a comfortable, slower reading pace */
+    animation: ticker 60s linear infinite; /* 60s duration ensures a slow, decent, and readable speed for very long max-content text */
     white-space: nowrap;
     align-items: center;
-    width: 100%;
+    width: max-content; /* Crucial: Allows container to expand to fit ALL news items so it doesn't restart prematurely */
     will-change: transform;
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
@@ -713,25 +713,8 @@
     text-decoration: none !important;
 }
 @keyframes ticker {
-    0% { transform: translate3d(100%, 0, 0); } /* Starts exactly from the search bar's right edge alignment and emerges smoothly! */
-    100% { transform: translate3d(-100%, 0, 0); }
-}
-
-/* Responsive adjustments for ticker speed on smaller viewports */
-@media (max-width: 992px) {
-    .ticker-news {
-        animation-duration: 16s !important;
-    }
-}
-@media (max-width: 768px) {
-    .ticker-news {
-        animation-duration: 12s !important;
-    }
-}
-@media (max-width: 576px) {
-    .ticker-news {
-        animation-duration: 10s !important;
-    }
+    0% { transform: translate3d(100vw, 0, 0); } /* Start off-screen right */
+    100% { transform: translate3d(-100%, 0, 0); } /* Move until entire max-content width is off-screen left */
 }
 
 /* Section Title */

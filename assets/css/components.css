@@ -653,6 +653,12 @@
     font-weight: 700;
     letter-spacing: -0.5px;
 }
+.ticker-news-track {
+    overflow: hidden;
+    flex-grow: 1;
+    height: 100%;
+    contain: layout paint;
+}
 .ticker-news {
     display: flex;
     height: 100%;

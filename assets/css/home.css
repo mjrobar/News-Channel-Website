@@ -3731,13 +3731,39 @@ img,
     .national-sidebar-list {
         max-height: 350px;
     }
+    .national-row-top {
+        grid-template-columns: 1fr;
+    }
     .national-horizontal-card {
+        flex-direction: column-reverse; /* Render image on top, text on bottom */
         width: 100%;
         height: auto;
+    }
+    .national-horizontal-card .national-card-text {
+        max-width: 100%;
+        flex: 1;
+        padding: 20px !important; /* Balanced padding for vertical layout */
+    }
+    .national-horizontal-card .national-card-img-link {
+        max-width: 100% !important;
+        flex: none !important;
+        width: 100% !important;
+        aspect-ratio: 16/9 !important;
     }
     .national-vertical-card-top {
         width: 100%;
         height: auto;
+    }
+    .national-row-bottom {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    .national-grid-card {
+        width: 100% !important;
+        height: auto !important;
+    }
+    .national-grid-card .national-card-img-link {
+        height: auto !important; /* Allow dynamic aspect-ratio height on mobile */
+        aspect-ratio: 16/9 !important;
     }
     .national-header-bottom {
         display: flex;
@@ -3826,43 +3852,6 @@ img,
     .international-img-wrapper {
         width: 100px;
         height: 65px;
-    }
-}
-
-@media (max-width: 768px) {
-    .national-row-top {
-        grid-template-columns: 1fr;
-    }
-    .national-horizontal-card {
-        flex-direction: column-reverse; /* Render image on top, text on bottom */
-        width: 100%;
-        height: auto;
-    }
-    .national-horizontal-card .national-card-text {
-        max-width: 100%;
-        flex: 1;
-        padding: 20px !important; /* Balanced padding for vertical layout */
-    }
-    .national-horizontal-card .national-card-img-link {
-        max-width: 100% !important;
-        flex: none !important;
-        width: 100% !important;
-        aspect-ratio: 16/9;
-    }
-    .national-vertical-card-top {
-        width: 100%;
-        height: auto;
-    }
-    .national-row-bottom {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .national-grid-card {
-        width: 100%;
-        height: auto;
-    }
-    .national-grid-card .national-card-img-link {
-        height: auto !important; /* Allow dynamic aspect-ratio height on mobile */
-        aspect-ratio: 16/9;
     }
 }
 

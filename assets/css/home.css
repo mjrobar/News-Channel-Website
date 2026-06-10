@@ -4311,14 +4311,16 @@ img,
     margin-bottom: 15px;
 }
 
-.site-footer .logo-text {
-    color: #1f2937 !important;
-    font-size: 0.85rem;
-    font-weight: 700;
+.site-footer .logo-box {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    height: 56px !important;
+    width: auto !important;
 }
 
-.site-footer .logo-text span {
-    color: #1f2937 !important;
+.site-footer .logo-text {
+    display: none !important;
 }
 
 .footer-description {

@@ -34,47 +34,69 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 9px; /* Increased by half-time (50% more gap) to push the text down professionally */
+    gap: 9px;
     line-height: 1;
 }
 .navbar .logo {
-    width: var(--logo-width);
+    width: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
 }
 .logo-text {
     font-family: var(--font-body);
     font-size: 0.72rem;
-    font-weight: 400; /* Changed to regular font weight */
+    font-weight: 400;
     color: #ffffff;
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
-.logo-text span {
-    color: #ffffff;
+.navbar .logo-text {
+    display: none !important;
 }
 .logo-box {
-    width: 40px;
-    height: 40px;
+    width: auto;
+    height: 48px;
     background-color: #ffffff;
-    border-radius: 0;
+    border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding: 0.5px; /* Extremely thin 0.5px white border frame */
+    padding: 4px 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     transition: var(--transition-fast);
 }
 .navbar .logo-box {
-    width: 32px;
-    height: 32px;
+    width: auto;
+    height: 58px;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 .logo-box:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 .logo-img {
-    width: 100%;
+    width: auto;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    border-radius: 0;
+}
+.logo-emblem {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 0;
+}
+.logo-text-img {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
     border-radius: 0;
 }
 .nav-links {
@@ -318,20 +340,29 @@
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
-    gap: 8px !important;
+    gap: 0 !important;
     width: auto !important;
 }
 .drawer-header .logo-box {
-    width: 32px !important;
-    height: 32px !important;
+    width: auto !important;
+    height: 48px !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+.drawer-header .logo-emblem {
+    height: 40px !important;
+}
+.drawer-header .logo-text-img {
+    display: block !important;
+    height: 26px !important;
 }
 .drawer-header .logo-text {
-    font-size: 0.85rem !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.05em !important;
-    color: #ffffff !important;
-    text-transform: uppercase !important;
-    margin-top: 0 !important;
+    display: none !important;
 }
 .drawer-close {
     background: none;
@@ -515,21 +546,33 @@
     .navbar-left .logo {
         width: auto !important;
         flex-direction: row !important;
-        gap: 8px !important;
+        gap: 0 !important;
         align-items: center !important;
         justify-content: center !important;
     }
     .navbar-left .logo-box {
-        width: 32px !important;
-        height: 32px !important;
+        width: auto !important;
+        height: 48px !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+    }
+    .navbar-left .logo-emblem {
+        height: 40px !important;
+    }
+    .navbar-left .logo-text-img {
+        display: block !important;
+        height: 26px !important;
+    }
+    .navbar-left .logo-text-wrapper {
+        display: none !important;
     }
     .navbar-left .logo-text {
-        font-size: 0.82rem !important;
-        font-weight: 700 !important;
-        color: #ffffff !important;
-        letter-spacing: 0.05em !important;
-        white-space: nowrap !important;
-        margin-top: 0 !important;
+        display: none !important;
     }
 
     /* 3. Compact video live button on right */

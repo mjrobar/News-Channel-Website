@@ -732,8 +732,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    // Banner Auto Slider (slides every 10 seconds right to left)
+    const initBannerSlider = () => {
+        const bannerTrack = document.querySelector('.wc-banner-slider-track');
+        if (!bannerTrack) return;
+        let currentIdx = 0;
+        setInterval(() => {
+            currentIdx = (currentIdx + 1) % 2;
+            bannerTrack.style.transform = `translateX(-${currentIdx * 50}%)`;
+        }, 10000);
+    };
+
     initHeroImageSlider();
     initNewsDetailsNavigation();
     initMobileDrawer();
+    initBannerSlider();
 });
 

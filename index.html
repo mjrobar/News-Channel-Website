@@ -166,21 +166,15 @@
     </div>
 
     <section class="hero-section container">
-        <!-- World Cup Countdown Banner -->
-        <div class="wc-countdown-banner">
-            <div class="wc-banner-waves"></div>
-            <div class="wc-banner-stadium"></div>
-            <div class="wc-banner-trophy">
-                <img src="assets/images/wc_trophy.png" alt="বিশ্বকাপ ট্রফি">
-            </div>
-            <div class="wc-banner-content">
-                <h2 class="wc-banner-title">বিশ্বকাপের অপেক্ষা</h2>
-                <div id="wc-countdown" class="wc-countdown-container">
-                    <!-- Countdown will be dynamically rendered here -->
+        <!-- World Cup Countdown Banner Slider -->
+        <div class="wc-static-banner" style="position: relative; width: 100%; margin-bottom: 10px; border: 1px solid rgba(255, 255, 255, 0.1); overflow: hidden; border-radius: 4px; aspect-ratio: 1024/235;">
+            <div class="wc-banner-slider-track" style="display: flex; width: 200%; height: 100%; transition: transform 0.8s ease-in-out;">
+                <div class="wc-banner-slide" style="width: 50%; height: 100%;">
+                    <img src="assets/images/qatar_swiss_banner.png" alt="Qatar vs Switzerland World Cup 2026" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                 </div>
-            </div>
-            <div class="wc-banner-ball">
-                <img src="assets/images/wc_ball.png" alt="বিশ্বকাপ ফুটবল">
+                <div class="wc-banner-slide" style="width: 50%; height: 100%;">
+                    <img src="assets/images/brazil_morocco_banner.png" alt="Brazil vs Morocco World Cup 2026" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
             </div>
         </div>
 
